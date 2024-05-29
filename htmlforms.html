@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE147 Does Forms</title>
+</head>
+<body>
+    
+    <header>
+        <h1>HTML Forms Lecture</h1>
+    </header>
+    <main>
+        
+        <h3>HTML Forms simple with various Input Types</h3>
+        
+        <!-- so utilizing the action and post attributes is associated with server-side form handling -->
+        <!-- <form action="/submit.py" method="POST"> -->
+        <!-- onsubmit attribute is for client-side form handling -->
+        <form onSubmit="handlesubmit">
+            <!-- the label is what is read to the user if they are using a screen-reader -->
+            <!-- for label the for attribute should match up with the id attribute in the input (binds them together) -->
+            <!-- the name attribute is the key of the data, the value is the value. if no value is present it is whatever the user inputs -->
+            <label for="username">Username (required):</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Username Here"
+                autocomplete="on"
+                pattern="[\w]+"
+                title="Please provide only alphanumeric values"
+                required>
+                <!-- This is for accessibility. ARIA (Accessibility Rich Internet Applications) -->
+                <!-- we want this to alert the user using a screen reader whenever something changes aka an error message -->
+                <div role="alert" aria-live="assertive"></div>
+            <br>  
+            <label for="password">Password (required):</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Password Here"
+                autocomplete="on"
+                pattern="[A-Z][a-z][\W].*"
+                title="Please provide an uppercase letter followed by lowercase followed by a special character"
+                required>
+                <div role="alert" aria-live="assertive"></div>
+            <br>  
+            <label for="email">Email (required):</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Email Here"
+                autocomplete="on"
+                pattern="[\w]+@[\w]+.com"
+                title="Please provide a valid email address"
+                multiple
+                required>
+                <div role="alert" aria-live="assertive"></div>
+                <!-- title is what will be displayed in the input doesn't match pattern -->
+            <br>  
+            <br>
+            <label for="fav_language">Fav Programming Language:</label>
+            <input type="radio" id="python" name="fav_language" value="Python">
+            <label for="python">Python</label>
+            <input type="radio" id="sql" name="fav_language" value="SQL">
+            <label for="sql">SQL</label>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label>
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <label for="subscribe">Subscribe to our Channel</label>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <label for="biography">Biography</label>
+            <br>
+            <textarea 
+                id="biography" 
+                name="biography" 
+                rows="4" 
+                cols="30" 
+                placeholder="Tell us about yourself"></textarea>
+                <div role="alert" aria-live="assertive"></div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <br>
+        <hr>
+        <br>
+        
+        <h3>Other cool input types we can utilize in forms</h3>
+        
+        <!-- when we get to JS we will have an actual handlesubmit function -->
+        <form onSubmit="handlesubmit">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" step="2">
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" min="2024-01-01">
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <!-- the select identifies the key for the data -->
+            <!-- option idenfities the value of the data -->
+            <label for="avatar">Choose your Avatar</label>
+            <select name="avator" id="avator" multiple>
+                <option value="Aang">Aang</option>
+                <option value="Katara">Katara</option>
+                <option value="Toph">Toph</option>
+                <option value="Zuko">Zuko</option>
+            </select>
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <!-- because all of these have different name attributes the keys will still all be unique -->
+            <label for="multiple_avatars">Choose all Avatars</label>
+            <input type="checkbox" id="avatar1" name="avatar1" value="Aang">
+            <label for="avatar1">Aang</label>
+            <input type="checkbox" id="avatar2" name="avatar2" value="Katara">
+            <label for="avatar2">Katara</label>
+            <input type="checkbox" id="avatar3" name="avatar3" value="Toph">
+            <label for="avatar3">Aang</label>
+            <div role="alert" aria-live="assertive"></div>
+            <br>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    
+</body>
+</html>

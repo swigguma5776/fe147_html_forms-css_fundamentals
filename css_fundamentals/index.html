@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- external CSS styling added via a link in the head of our page -->
+    <link rel="stylesheet" href="./static/styles.css">
+    <!-- internal CSS styling is adding a style element to the head of our page -->
+    <style>
+        /* simple element selector, selecting based off of element tag name (most simple, less specific) */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        
+        h3 {
+            color: goldenrod; 
+        }
+        /* . targets classes which are the 2nd most specific */
+        /* like to use classes to GROUP different stylings together */
+        .headings {
+            background-color:beige;
+            color: pink;
+            
+        }
+        
+        /* targeting specific elements */
+        /* # targets ids which are the most specific */
+        /* because id is more specific than simple element selectors, this guy wins */
+        #hobbies {
+            color: blueviolet; 
+        }
+        
+    </style>
+    <title>SE147 Does CSS</title>
+</head>
+<body>
+     <!-- Semantic Elements (nav, header, section, footer ) help with organization & readability -->
+    <!-- NavBar Section -->
+    <!-- nav is just semantics, doesn't have any additional functionaality. It's for SEO (Search Engine Optimization) and organization & readability -->
+    <nav>
+        <h2>Contact</h2>
+        <p>Email: spongebob@squarepants.com</p>
+        <p>LinkedIn: <a id="linkedin" href="https://www.linkedin.com/in/alex-swiggum-profile/" target="_blank">SpongeBob Profile</a></p>
+        <a href="./contact.html"><button>Contact Me</button></a>
+    </nav>
+    
+    <!-- header is also a semantic element -->
+    <header>
+        <figure>
+            <img src="https://images5.fanpop.com/image/photos/31300000/Spongebob-spongebob-squarepants-31312835-1280-1024.jpg" alt="spongebob photo" style="width:500px;">
+            <figcaption>SpongeBob Squarepants Headshot.</figcaption>
+        </figure>
+        <!-- utiliziing inline css styline below by adding the style attribute to our element -->
+        <h1 style="color:aquamarine; background-color:rgb(62, 61, 61);">SpongeBob Squarepants</h1>
+        <p style="font-family: 'Jersey 10 Charted', sans-serif;">Welcome to my professional Resume</p>
+        <section>
+            <p>These are the things that make you want to hire me!!!</p>
+        </section>
+    </header>
+    
+    <!-- main eleement represents the dominant content of our page -->
+    <main>
+        <h3>My Experiecies and Hobbies: </h3>
+        <section>
+            <h3 class="headings">Experience/Skills</h3>
+            <ul>
+                <li>Making Delicious Burgers</li>
+                <li>Super Friendly & Team Player</li>
+                <li>Very Optimistic</li>
+            </ul>
+        </section>
+        
+        <!-- would more specifically be used if you have a side section on your page -->
+        <aside>
+            <h3 class="headings" id="hobbies">Hobbies</h3>
+            <ul>
+                <li>Kayaking</li>
+                <li>Biking</li>
+                <li>Hiking</li>
+            </ul>
+        </aside>
+        
+        <!-- This is mainly for encapsulating large bodies of writing aka a magazine or blog post -->
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nobis consectetur exercitationem, nemo repellat expedita illo modi, qui blanditiis possimus error ullam asperiores? Voluptas vel voluptate, deserunt nesciunt officiis consequuntur.</p>
+        </article>
+        
+        <hr>
+        <div id="box">
+           This div is styled with #box and demonstrates the box model 
+        </div>
+    </main>
+    
+    <footer>
+        <p> &copy; 2024 SpongeBob Squarepants. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

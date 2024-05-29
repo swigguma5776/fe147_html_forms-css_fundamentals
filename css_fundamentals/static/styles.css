@@ -1,0 +1,118 @@
+/* External CSS file, the preferred method for adding CSS especially in large projects */
+
+
+/* Hierarchy for linking CSS */
+/* Inline is most specific, most hierarchical */
+/* Internal is next */
+/* External is least specific, least hierarchical */
+
+h2 {
+    color: #F074AB; 
+}
+
+/* The !important is a little cheatcode aka doesn't care where it lies in the hierarchy, it overrides everything */
+/* Try to use it sparingly as it can really mess up the hierarchy of your css files */
+h3 {
+    color: blue !important;
+}
+
+/* grabbing a descendant, doesn't matter if its direct descendant or down the line */
+main section {
+    border: 1px solid pink; 
+}
+
+/* grabbing the DIRECT child utilizing the > */
+main > h3 {
+    text-shadow: red 2px 2px;
+    /* margin: 0px auto 30px 50px; /* if you give all 4 values it is top, left, bottom, right */
+    /* margin: 0px auto; /* top/bottom, left/right when you use auto for either top/down, left/right it splits available space in half*/
+    margin-left: auto;
+    margin-right: auto; 
+    width: 300px; 
+}
+
+/* grabbing the DIRECT sibling utizliing the +, MUST come after */
+section + aside {
+    border: 2px dashed darkolivegreen; 
+}
+
+/* grabbing the GENERAL sibling utilizing the ~, MUST come after */
+section ~ article {
+    color: white;
+    background-color: grey;
+}
+
+/* We can group ANY # of selectors together seperated by commas */
+/* the selectors don't have to be the same type */
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+/* text-decoration: none gets rid of underlines */
+a {
+    text-decoration: none; 
+}
+
+/* pseudo-class indicated by the singular : and monitors the STATE of elements */
+/* hover is a very popular pseudo-class */
+#linkedin:hover {
+    color: pink; 
+    text-decoration-line: underline; 
+}
+
+/* supposed to turn based on which element (link or button) is active*/
+#linkedin:active {
+    color: greenyellow;
+}
+
+/* :first-child is another popular pseodo-class */
+
+/* emphasize something like a first a paragraph. first sentence */
+li:first-child {
+    color: red; 
+    font-weight: bold; 
+}
+
+/* very helpful pseudo-class for table styling! */
+/* pseudo-classes give little hints to our user that these elements are for interaction */
+li:nth-child(odd) {
+    background-color: aquamarine; 
+}
+
+button {
+    background-color: aquamarine;
+    color: tomato; 
+    border: none; 
+    border-radius: 10px;
+    /* no matter what size screen this button will ALWAYS be the same size because i used pixels */
+    width: 150px;
+    height: 30px
+}
+
+button:hover {
+    box-shadow: 10px 5px 5px teal;
+}
+
+#box {
+    border: 3px solid dodgerblue; 
+    padding: 10px; /* padding is the space in between the content and the border */
+    margin: 10px; /* margin is the space between divs. so outside of the border and next adjacent div. */
+}
+
+
+/* UNIT NOTES */
+/* Absolute Lengths (aka DO NOT change depending on screen size)
+    px: pixels, used a lot
+    mm: millimeters
+    cm: centimeters
+    in: inches
+*/
+
+
+/* Relative Lengths (aka CHANGE dependingn on screen OR parent container)
+    em: based off of PARENT containers font-size (defaults to 16px aka 1 em is 16px)
+    rem: based off of the ROOT containers font-size (same defaults as above)
+    %: relative to parent container (if parent container is fixed sizing this would just adjust the child container based off that but would also be fixed)
+    vw: view width aka your devices screen width
+    vh: view height aka your devices screen height
+*/
